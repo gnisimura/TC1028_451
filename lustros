@@ -1,0 +1,4 @@
+nac=int(input("¿En que año naciste?"))
+act=2024
+lustros=(act-nac)/5
+print (lustros) 
