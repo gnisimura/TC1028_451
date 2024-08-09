@@ -1,0 +1,4 @@
+edad1=int(input("¿Cuantos años tienes? "))
+año=int(input("¿En que año estamos?"))
+año2=año-edad1+100
+print("En el año ",str(año2)," cumplirás 100 años")
