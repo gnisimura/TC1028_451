@@ -1,0 +1,5 @@
+peso1=int(input('¿cual es tu peso actual?'))
+peso2=int(input('¿Cual es tu peso objetivo?'))
+meses=int(input('¿Cuantos meses vas a participar en el programa integral?'))
+kilos=abs(peso2-peso1)/meses
+print("Para llegar a tu peso objetivo de ",str(peso2),"kg. debes bajar ",str(kilos)," kg por mes")
