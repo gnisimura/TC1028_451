@@ -1,0 +1,6 @@
+1 primera=int(input('¿Cual es la primer calificacion? '))
+2 segunda=int(input('¿Cual es la segunda calificacion? '))
+3 tercera=int(input('¿Cual es la tercera calificacion? '))
+4 cuarta=int(input('¿Cual es la cuarta calificacion? '))
+5 promedio=int((primera+segunda+tercera+cuarta)/4)
+6 print('El promedio de tus calificaciones es: ',promedio)
