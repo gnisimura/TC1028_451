@@ -1,0 +1,6 @@
+x1=float(input('Coordenada x del punto A:'))
+y1=float(input('Coordenada y del punto A:'))
+x2=float(input('Coordenada x del punto B:'))
+y2=float(input('Coordenada y del punto B:'))
+m=(y2-y1)/(x2-x1)
+print(f"La pendiente de la recta que une a los puntos A y B es:{m:.2f}")
