@@ -1,0 +1,8 @@
+import math
+hipotenusa=10
+print ("Cual es el angulo base?")
+angulo=int(input())
+rad=math.radians(angulo)
+seno=math.sin(rad)
+cateto_op=seno*hipotenusa
+print (f"El cateto opuesto es: {cateto_op:.1f}")
