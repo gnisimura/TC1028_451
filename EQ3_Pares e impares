@@ -1,0 +1,12 @@
+print("hola mundo")
+num=int(input("Escribe un numero entero"))
+if num>0:
+    if num% 2 == 0:
+        print("el numero es par positivo")
+    elif num% 2 == 1:
+        print("el numero es impar positivo")
+if num<0:
+    if num% 2 == 0:
+        print("el numero es par negativo")
+    elif num% 2 == 1:
+        print("el numero es impar negativo")
