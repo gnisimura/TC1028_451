@@ -1,0 +1,10 @@
+from math import* 
+X = float(input("Teclee la X: ")) 
+Y = float(input("Teclee la Y: "))
+Z = float(input("Teclee la Z: "))
+
+if X <= 0 or Y <= 0 or Z <= 0: print ("No es un triangulo")
+
+elif X == Y == Z: print("Tu traingulo es equilátero")
+elif X != Y != Z and X != Z != Y: print("Tu triangulo es escaleno")
+elif X == Y != Z or X != Y == Z or X == Z != Y: print ("Tu triangulo es isósceles")
