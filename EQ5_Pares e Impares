@@ -1,0 +1,13 @@
+print("Escriba un número para saber si es par o impar")
+number = input()
+number = int(number)
+if number%2==0:
+    if number<0:
+        print("Par negativo")
+    else:
+        print("Par positivo")
+if number%2!=0:
+    if number>0:
+        print("Impar positivo")
+    else:
+        print("Impar negativo")
