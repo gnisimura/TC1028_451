@@ -1,0 +1,12 @@
+num = float(input("Ingresa un número:"))
+            
+if num<0:
+    if num%2==0:
+        print("par negativo")
+    elif num%2==1:
+        print("impar negativo")
+if num>0:
+    if num%2==0:
+        print("par positivo")
+    elif num%2==1:
+        print("impar positivo")
