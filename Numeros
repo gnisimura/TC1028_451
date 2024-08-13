@@ -1,0 +1,13 @@
+print("Dime un número entero")
+numero = input()
+num = int(numero)
+if ((num % 2) == 0) and (num > 0):
+    print("Es un par positivo")
+elif((num % 2) == 0) and (num < 0):
+    print("Es un par negativo")
+elif((num % 2) != 0) and (num > 0):
+    print("Es un impar positivo")
+elif((num % 2) != 0) and (num < 0):
+    print("Es un impar negativo")
+else:
+    print("Es 0, es un par postivo")
