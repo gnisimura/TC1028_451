@@ -1,0 +1,12 @@
+x=int(input("Escribe el primer numero"))
+y=int(input("Escribe el segundo numero"))
+z=int(input("Escribe el tercer numero"))
+
+if x>y and x>z:
+    print("El numero mayor es", x)
+    
+elif y>x and y>z:
+     print("El numero mayor es", y)
+     
+else:
+     print("El numero mayor es", z)
