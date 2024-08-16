@@ -1,0 +1,26 @@
+print("Ingresa dos numeros y una clave para realizar la operación."
+      " Escribe s para sumar, r para restar, m para multiplicar y d para dividir.")
+
+num1 = float(input("Primer valor:"))
+num2 = float(input("Segundo valor:"))
+clave = input("Clave: ")
+
+s = num1 + num2
+r = num1 - num2
+m = num1 * num2
+
+if clave == 's':
+    print(s)
+elif clave == 'r':
+    print(r)
+elif clave == 'm':
+    print(m)
+elif clave == 'd':
+    if num2 != 0:
+        d = num1 / num2
+        print(d)
+    else:
+        print("No se puede dividir entre 0.")
+
+else:
+    print("Esta operación no es posible.")
