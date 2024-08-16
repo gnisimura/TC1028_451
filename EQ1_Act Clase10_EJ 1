@@ -1,0 +1,21 @@
+def equivalente(hrs, mins, segs):
+    return ((hrs * 3600) + (mins * 60) + segs)
+def main():
+    print("Proceso 1")
+    hrs1 = int(input("Indica la cantidad de horas: "))
+    mins1 = int(input("Indica la cantidad de minutos: "))
+    segs1 = int(input("Indica la cantidad de segundos: "))
+
+    print("Proceso 2")
+    hrs2 = int(input("Indica la cantidad de horas: "))
+    mins2 = int(input("Indica la cantidad de minutos: "))
+    segs2 = int(input("Indica la cantidad de segundos: "))
+
+    totalsegs1 = equivalente(hrs1, mins1, segs2)
+    totalsegs2 = equivalente(hrs2, mins2, segs2)
+
+    print("El Proceso 1 llevó un total de", totalsegs1, "segundos")
+    print("El Proceso 2 llevó un total de", totalsegs2, "segundos")
+
+if __name__ == "__main__":
+    main()
