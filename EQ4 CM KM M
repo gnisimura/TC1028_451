@@ -1,0 +1,15 @@
+#De Centímetros a Kilómetros, Metros y Centímetros 
+
+def convertir_distancia():
+    # Solicitar la distancia en centímetros
+    distancia_cm = int(input("Ingresa la distancia en centímetros: "))
+
+    # Convertir a kilómetros, metros y centímetros
+    kilometros = distancia_cm // 100000
+    metros = (distancia_cm % 100000) // 100
+    centimetros = distancia_cm % 100
+
+    # Mostrar el resultado en una sola línea
+    print(f"{kilometros} km, {metros} m, {centimetros} cm")
+
+convertir_distancia()
