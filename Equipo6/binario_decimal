@@ -1,0 +1,8 @@
+binario_decimal = str(input("Ingresa el numero binario: "))
+binary_check = '1', '0'
+
+if len(binario_decimal) != 0:
+    if any(x not in binary_check for x in binario_decimal):
+        print("-1")
+    else:
+        print(int(binario_decimal, 2))
