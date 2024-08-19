@@ -1,0 +1,9 @@
+calif=float(input("Escribe tu calificacion como un número flotante entre 0 y 1"))
+if calif>0.9:
+    print("Tu nota es A")
+elif calif>0.8:
+    print("Tu nota es B")
+elif calif>0.7:
+    print("Tu nota es C")
+else:
+    print("Tu nota es D")
