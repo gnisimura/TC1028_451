@@ -17,6 +17,6 @@ if str(x) == "a" or str(x) == "p":
     y = input("Indica el largo del rectángulo")
     z = input("Indica el ancho del rectángulo")
 else:
-    print("Lo siento el valo que dio no es válido")
+    print("Lo siento, el valor que dio no es válido")
     
 main(int(y), int(z), str(x))
