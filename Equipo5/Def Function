@@ -1,0 +1,29 @@
+def areaRect(largo, ancho):
+    print(largo * ancho)
+
+def perimetroRect(largo, ancho):
+    print(largo * 2 + ancho * 2)
+
+def main(largo, ancho, clave):
+    if(str(clave) == str("a")):
+        areaRect(largo, ancho)
+    elif(str(clave) == str("p")):
+        perimetroRect(largo, ancho)
+
+print("escribe 'a' si quieres encontrar el área y 'p' si quieres encontrar el perímetro")
+clave = input()
+
+if(str(clave) == str("a")):
+    l = input("Escriba el largo del rectángulo: ")
+    a = input("Esciba el ancho del rectángulo: ")
+    print("tu respuesta es:")
+    main(int(l), int(a), str(clave))
+elif(str(clave) == str("p")):
+    l = input("Escriba el largo del rectángulo: ")
+    a = input("Esciba el ancho del rectángulo: ")
+    print("tu respuesta es:")
+    main(int(l), int(a), str(clave))
+else:
+    print("vuelve a intentar")
+
+    
