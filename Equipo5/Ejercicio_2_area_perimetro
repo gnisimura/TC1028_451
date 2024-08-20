@@ -1,0 +1,22 @@
+def areaRect(largo, ancho):
+    print(largo * ancho)
+
+def perimetroRect(largo, ancho):
+    print((2 * largo) + (2 * ancho))
+
+def main(largo, ancho, x):
+    if str(x) == "a":
+        areaRect(largo, ancho)
+    elif str(x) == "p":
+        perimetroRect(largo, ancho)
+    else:
+        print("Por favor utiliza (a) si deseas sacar el área o (p) si deseas sacar el perímetro como tercer parámetro de esta función.")
+        
+x = input("Hola, para sacar el área de un rectangulo por favor oprima (a), si desea sacar el perímetro oprima (p)")
+if str(x) == "a" or str(x) == "p":
+    y = input("Indica el largo del rectángulo")
+    z = input("Indica el ancho del rectángulo")
+else:
+    print("Lo siento el valo que dio no es válido")
+    
+main(int(y), int(z), str(x))
