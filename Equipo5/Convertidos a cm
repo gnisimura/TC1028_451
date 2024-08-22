@@ -1,0 +1,27 @@
+def f_to_cm(x):
+    return (int(x) * 30.48)
+    
+def inch_to_cm(x):
+    return (int(x) * 2.54)
+
+def yard_to_cm(x):
+    return (int(x) * 91.44)
+
+x = 0
+
+while x == 0:
+    answer = input("Para convertir de pies a cm oprima 1, de pulgadas a cm oprima 2 y para convertir de yardas a cm oprima  3 ")
+    if answer == "1" or answer == "2" or answer == "3":
+        x += 1
+        y = input("Indique la cantidad que desea convertir a cm ")
+        if answer == "1":
+            z = f_to_cm(float(y))
+            print(f"Tienes {z} cm")
+        elif answer == "2":
+            z = inch_to_cm(float(y))
+            print(f"Tienes {z} cm")
+        elif answer == "3":
+            z = yard_to_cm(float(y)) 
+            print(f"Tienes {z} cm")
+    else:
+        print("Lo siento, el valor que escribio no es válido")

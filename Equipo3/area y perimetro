@@ -1,0 +1,19 @@
+def areaRect (largo,ancho):
+    return (ancho*largo)
+def perimetroRect(largo,ancho):
+   return (2*(ancho+largo))
+def main():
+    largo=(float(input("introduce el largo del rectangulo")))
+    ancho=(float(input("introduce el ancho del rectangulo")))
+    opcion=input("introduce para calcular el area a o p para calcular el perimetro")
+
+    if opcion=="a":
+        resultado = areaRect(largo,ancho)
+        print("el area del rectangulo es",resultado)
+    elif opcion=="p":
+        resultado=perimetroRect(largo,ancho)
+        print("el perimetro del rectangulo es", resultado)
+    if opcion!= "a" or "p":
+        print("opcion no valida")
+        
+main()
