@@ -1,0 +1,40 @@
+monto=float(input("¿Monto?"))
+vip=input("¿VIP? (s=si, n=no)")
+destino=input("¿Destino? (a=América, b=Europa, c=Asia)")
+TipoProducto=input("¿Tipo de producto? (d=Descarga, e=Envío)")
+Peso=float(input("¿Peso?"))
+
+costofinal=float()
+
+if vip=="s":
+    vip=0.8
+elif vip=="n" and monto>5000:
+    vip=0.88
+else:
+    vip=1
+    
+if destino=="a":
+    destino=0.95
+elif destino=="b":
+    destino=0.88
+elif destino=="c":
+    destino=0.92
+else:
+    destino=1
+    
+if TipoProducto=="d":
+    TipoProducto=0
+elif TipoProducto=="e" and Peso<5:
+    TipoProducto=35
+elif TipoProducto=="e" and Peso>=5:
+    TipoProducto=35+5*(Peso-5)
+else:
+    TipoProducto=0
+    
+costofinal=monto*vip*destino+TipoProducto
+    
+print("Monto=", monto)
+print("Descuento=", vip)
+print("Impuestos=", destino)
+print("Gastos Envio=", TipoProducto)
+print("PRECIO FINAL=", costofinal)
