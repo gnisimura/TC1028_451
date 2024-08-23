@@ -1,0 +1,51 @@
+def descuentos(x, y):
+    if x == "S":
+        return (float(y) * 0.2)
+    elif x == "N" and float(y) > 5000:
+        return (float(y) * 0.12)
+    elif x == "N" and float(y) <= 5000:
+        return 0
+    else:
+        return 0
+
+def impuestos(x, y):
+    if x == "A":
+        return (float(y) * 0.05)
+    elif x == "B":
+        return (float(y) * 0.12)
+    elif x == "C":
+        return (float(y) * 0.08)
+    else:
+        return 0
+
+def gasto_envio(x, y):
+    if x == "d":
+        return 0
+    elif x == "e" and float(y) < 5:
+        return 35
+    elif x == "e" and float(y) >= 5:
+        return (35 + (5 * (round(float(y)) - 4)))
+    else:
+        return 0
+
+def costo(a, b, c, d):
+    return (float(a) - float(b) + float(c) + float(d))
+
+def Jesus(Judas, Santiago, Juan, Pedro, Judas_Iscariote):
+    a = descuentos(Santiago, Judas)
+    b = impuestos(Juan, Judas)
+    c = gasto_envio(Pedro, Judas_Iscariote)
+    d = costo(Judas, a, b, c)
+    print(f"Su descuento es de ${a}")
+    print(f"Su impuesto es de ${b}")
+    print(f"Su costo de envio es de ${c}")
+    print(f"Su costo total es de ${d}")
+
+print("Buenas tardes, para calcular el monto total por favor escribe los siguientes datos:")
+Judas = input("Ingrese el monto de su compra ")
+Santiago = input("Por Favor escriba S, en caso de ser cliente VIP. De lo contrario escriba N ")
+Juan = input("Escriba la letra asignada a su continente A - América, B - Europa, C - Asia ")
+Pedro = input("Escriiba 'd' producto es descarga o en caso de requerir envio escriba 'e' ")
+Judas_Iscariote = input("Escriba el peso de su producto si aplica, de lo contrario escriba 'NA' ")
+
+Jesus(Judas, Santiago, Juan, Pedro, Judas_Iscariote)
