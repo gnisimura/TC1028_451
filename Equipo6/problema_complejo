@@ -1,0 +1,58 @@
+import math
+
+producto = input("Que tipo de producto vas a comprar. Ingresa d para digital y e para envio:")
+monto = int(input("Monto de la compra: "))
+tarjeta = input("¿Cuentas con tarjeta VIP? Ingresa s para si y n para no:")
+continente = input("¿En que continente habitas? Ingresa a para America, b para Europa y c para Asia:")
+
+if tarjeta == 's':
+    descuento = .2
+else:
+    descuento = 0
+
+costo = monto
+envio = 0
+
+if producto == 'd':
+    total_con_descuento = monto * (1 - descuento)
+elif producto == 'e':
+    peso = math.ceil(float(input("Ingresa el peso de tu compra:")))
+    if peso < 5:
+        envio = 35
+    else:
+        envio = 35 + (peso - 5) * 5
+    total_con_descuento = monto * (1 - descuento)
+else:
+    print("Producto invalido")
+    total_con_descuento = None
+
+if total_con_descuento is not None:
+    if continente == 'a':
+        impuesto = .05
+    elif continente == 'b':
+        impuesto = .12
+    elif continente == 'c':
+        impuesto = .08
+    else:
+        impuesto = 0
+        print("Continente invalido. Impuestos no calculados.")
+
+    impuestos = monto * impuesto
+
+    if total_con_descuento > 5000 and tarjeta != 's':
+        descuento_adicional = 0.12
+    else:
+        descuento_adicional = 0
+
+    total_con_descuento_adicional = total_con_descuento * (1 - descuento_adicional)
+    total_final = total_con_descuento_adicional + impuestos + envio
+
+    monto_descuento = monto * descuento
+    monto_descuento_adicional = total_con_descuento * descuento_adicional
+
+    print("Tu total es: $", total_final)
+    print("Descuento aplicado: $", monto_descuento + monto_descuento_adicional)
+    print("Impuestos aplicados: $", impuestos)
+    print("Costo de envío: $", envio)
+else:
+    print("Error")
