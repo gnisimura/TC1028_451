@@ -1,0 +1,33 @@
+monto=int(input("Cual es el monto de tu compra?"))
+
+vip=str(input("Escribe 's' si eres un usuario vip y 'n' si no lo eres"))
+
+if vip=="s":
+    monto=monto*0.8
+
+elif vip=="n" and monto>5000:
+    monto=monto*0.92
+
+dest=str(input("Escribe 'a' si eres de America, 'b' si eres de Europa y 'c' si eres de Asia"))
+
+if dest=="a":
+    monto=monto+(monto*0.05)
+    
+elif dest=="b":
+    monto=monto+(monto*0.12)
+  
+elif dest=="c":
+    monto=monto+(monto*0.08)
+    
+tipo=str(input("Escribe 'd' si tu producto de descarga y 'e' si se envia"))
+
+if tipo=="e":
+    peso=int(input("Escribe el peso de tu producto"))
+    
+if peso<5:
+    monto=monto+35
+
+elif peso>5:
+    monto=monto+35+((peso-5)*5)
+    
+print(monto)
