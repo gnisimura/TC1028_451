@@ -1,0 +1,11 @@
+num = input()
+numint = int(num)
+SumDivisible = int(0)
+for index in range(1,numint,1):
+    if numint % index == 0 and index != numint:
+        SumDivisible += index
+
+if SumDivisible == numint:
+    print("Es perfecto")
+else:
+    print("No es perfecto")
