@@ -1,0 +1,16 @@
+numero = int(input("Introduce un número entero positivo: "))
+
+suma_divisores = 0
+divisor = 1
+
+
+while divisor < numero:
+    if numero % divisor == 0:
+        suma_divisores += divisor
+    divisor += 1
+
+
+if suma_divisores == numero:
+    print("Es perfecto")
+else:
+    print("No es perfecto")
