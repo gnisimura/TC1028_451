@@ -1,0 +1,9 @@
+x = input("Ingrese un número")
+n = 0
+
+while int(x) >= 0:
+    if (int(x) % 2) == 0:
+        n += 1
+    x = input("Ingrese un número")
+        
+print("Total de pares="+str(n))
