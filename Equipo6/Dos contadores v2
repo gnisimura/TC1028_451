@@ -1,0 +1,7 @@
+a = int(input("Introduce el valor inicial del rango (a): "))
+b = int(input("Introduce el valor final del rango (b): "))
+
+while 0 != b:
+    print(a,b)
+    a += 2
+    b -= 1
