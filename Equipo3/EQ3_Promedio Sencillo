@@ -1,0 +1,13 @@
+n=int(input("Ingrese la cantidad de valores a promediar:"))     
+
+suma=0.0
+cont=0
+
+while cont<n:
+    n1=float(input("Ingrese un valor:"))
+    suma += n1
+    cont += 1
+    
+promedio= suma/n
+
+print(promedio)
