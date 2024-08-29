@@ -1,0 +1,9 @@
+a = int(input("Ingresa el valor de a:"))
+b = int(input("Ingresa el valor de b:"))
+
+while a <= b:
+    if a % 2 != 0:
+        a += 1
+    else:
+        print(a)
+        a += 2
