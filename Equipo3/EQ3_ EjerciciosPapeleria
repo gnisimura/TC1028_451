@@ -11,9 +11,12 @@ sum=cantidad
 while Mas=="S":
     precio= float(input("precio del producto?"))
     cantidad= float(input("cantidad a comprar"))
-    tot=precio*cantidad
+    tot1=precio*cantidad
     sum=sum+cantidad
     print("el total de este articulo es",tot)
     Mas=input("desea comprar otro articulo S/N?")
+    preciofinal=tot+tot1
+    
+print("el precio final es",preciofinal)
 
-print("el total de articuloS es",sum)
+print("el total de articulos es",sum)
