@@ -1,0 +1,12 @@
+print("Escoge entre '-' ó '*'")
+character = input()
+print("¿Cuántas veces lo deseas repetir?")
+numberTimes = int(input())
+def dibuja_linea(char,numTimes):
+    final = ""
+    for index in range(0,numTimes,1):
+        final += char
+    print("Resultado:")
+    print(final)
+
+dibuja_linea(character,numberTimes)
