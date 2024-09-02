@@ -1,0 +1,13 @@
+print("Escoge entre '-' ó '*'")
+character = input()
+print("¿Cuál sería la longitud del cuadrado?")
+numberTimes = int(input())
+def cuadrado(char,numTimes):
+    final = ""
+    for index in range(0,numTimes,1):
+        final += char
+    print("Resultado:")
+    for index in range (0,numberTimes,1):
+        print(final)
+
+cuadrado(character,numberTimes)
