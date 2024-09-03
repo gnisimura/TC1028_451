@@ -1,0 +1,9 @@
+Fibonacci = [0,1,1]
+print("¿Qué posición de la secuencia Fibonacci desea?")
+ind = int(input())
+for index in range(0,ind,1):
+    temp = Fibonacci[-1]+Fibonacci[-2]
+    Fibonacci.append(temp)
+
+print("El número en la posición "+str(ind)+" es:")
+print(Fibonacci[ind-1])
