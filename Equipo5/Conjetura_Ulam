@@ -1,0 +1,17 @@
+print("Escoge un número")
+num = int(input())
+Stop = False
+print("La conjetura Ulam es: ")
+print(num)
+while Stop == False:
+    if (num%2 == 0 and num/2 != 1):
+        num = int(num/2)
+        print(num)
+    elif (num%2 != 0):
+        num = int(num*3+1)
+        print(num)
+    elif (num/2 == 1):
+        num = int(num/2)
+        print(num)
+        Stop == True
+        break
