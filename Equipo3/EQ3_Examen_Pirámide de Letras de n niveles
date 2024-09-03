@@ -1,0 +1,16 @@
+def generar_piramide(n):
+    abecedario = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    for i in range(n):
+        espacios = ' ' * (n - i - 1) * 2
+        letras_ascendentes = abecedario[:i + 1]
+        letras_descendentes = letras_ascendentes[:-1][::-1]
+        fila = ' '.join(letras_ascendentes + letras_descendentes)
+        print(espacios + fila)
+
+n = int(input("Introduce el número de niveles de la pirámide (entre 1 y 26): "))
+
+
+if 1 <= n <= 26:
+    generar_piramide(n)
+else:
+    print("El número debe estar entre 1 y 26")
