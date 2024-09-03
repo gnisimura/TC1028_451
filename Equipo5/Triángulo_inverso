@@ -1,0 +1,8 @@
+print("Escoge la altura del triángulo inverso")
+height = int(input())
+
+def invTriangle(h):
+    for index in range(0,h,1):
+        print("0"*(h-index))
+        
+invTriangle(height)
