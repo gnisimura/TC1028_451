@@ -1,0 +1,18 @@
+def dibuja_linea(caracter,cantidad):
+    return(caracter*cantidad)
+caracter=input("escribe el caracter que deseas que se repita")
+
+def dibuja_cuadrado(n):
+    for _ in range(n):
+        print(dibuja_linea(caracter,n))
+
+def main():
+    cantidad=int(input("cuantas veces quieres que se repita?"))
+
+    if cantidad <0:
+        print("la cantidad no puede ser negativa")
+    else:
+        dibuja_cuadrado(cantidad)
+
+
+main()
