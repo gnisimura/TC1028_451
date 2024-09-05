@@ -1,1 +1,11 @@
+def dibuja_linea(caracter,cantidad):
+    return(caracter*cantidad)
 
+def main():
+    caracter=input("escribe el caracter que deseas que se repita")
+    cantidad=int(input("cuantas veces quieres que se repita?"))
+    if cantidad <0:
+        print("la cantidad no puede ser negativa")
+    else:
+        resultado= dibuja_linea(caracter,cantidad)
+        print(resultado)
