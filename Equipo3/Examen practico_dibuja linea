@@ -9,3 +9,4 @@ def main():
     else:
         resultado= dibuja_linea(caracter,cantidad)
         print(resultado)
+main()
