@@ -1,0 +1,9 @@
+n = int(input("Define el valor de n: "))
+caracter = str(input("Ingresa un caracter: "))
+
+
+def dibuja_linea():
+    print(caracter * n)
+
+
+dibuja_linea()
