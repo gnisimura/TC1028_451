@@ -1,0 +1,14 @@
+x = int(input("ingrese un valor"))
+y = int(input("ingrese un valor"))
+lista = []
+
+while x != -1 and y != -1:
+    if x < y:
+        lista.append(x)
+    else:
+        lista.append(y)
+    x = int(input("ingrese un valor"))
+    y = int(input("ingrese un valor"))
+    
+else:
+    print(lista)
