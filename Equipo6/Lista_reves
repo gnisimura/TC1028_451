@@ -1,0 +1,11 @@
+lista = []
+while True:
+    n = int(input("Ingresa un número para agregarlo a la lista o -1 para terminar: "))
+    if n == -1:
+        break
+    lista.append(n)
+
+reverse = lista[::-1]
+
+print(lista)
+print(reverse)
