@@ -1,0 +1,10 @@
+y = int(input("escribe de cuántos números es tu lista: "))
+lista = []
+lista_al_cuadrado = []
+for i in range(int(y)):
+    numero = int(input("Ingresa un número: "))
+    lista.append(numero)
+    lista_al_cuadrado.append(numero ** 2)
+
+print(lista)
+print(lista_al_cuadrado)
