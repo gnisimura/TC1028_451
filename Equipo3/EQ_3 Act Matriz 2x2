@@ -1,0 +1,24 @@
+def calcular_determinante(matriz):
+    a, b = matriz[0]
+    c, d = matriz[1]
+    return a * d - c * b
+
+def crear_matriz():
+    matriz = []
+    for i in range(2):
+        fila = list(map(int, input(f"Ingrese los valores de la fila {i + 1} (separados por espacio): ").split()))
+        matriz.append(fila)
+    return matriz
+
+def main():
+    matriz = crear_matriz()
+    
+    if len(matriz) != 2 or any(len(fila) != 2 for fila in matriz):
+        print("La matriz no es una matriz de 2x2.")
+        return
+    
+    determinante = calcular_determinante(matriz)
+    print(f"El determinante de la matriz es: {determinante}")
+
+if __name__ == "__main__":
+    main()
