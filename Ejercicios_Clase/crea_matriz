@@ -1,0 +1,22 @@
+def pide_datos_matriz():
+    print("Cuantos renglones")
+    renglones=int(input())
+    print("Cuantas columnas")
+    columnas=int(input())
+    matriz=[]
+    for ren in range(renglones):
+        #seccion que crea un renglon con "columnas" datos
+        lista=[]
+        for col in range(columnas):
+            print("Teclea el dato para el renglon ",ren," y la columna ",col)
+            dato=int(input())
+            lista.append(dato)
+        #hasta aqui se crea un renglon
+        matriz.append(lista)
+    return matriz
+
+def main():
+    mat=pide_datos_matriz()
+    print(mat)
+    
+main()
