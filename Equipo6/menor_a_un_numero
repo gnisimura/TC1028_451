@@ -1,0 +1,32 @@
+valor_maximo = int(input("Ingresa el valor maximo permitido:"))
+
+def obtener_valores_validos(matriz):
+    valores_validos = [x for x in matriz for x in x if x < valor_maximo]
+    return valores_validos
+
+
+def pide_datos_matriz():
+    print("Cuantos renglones")
+    renglones = int(input())
+    print("Cuantas columnas")
+    columnas = int(input())
+    matriz = []
+    for ren in range(renglones):
+        # seccion que crea un renglon con una columna de datos
+        lista = []
+        for col in range(columnas):
+            print("Teclea el dato para el renglon", ren, "y la columna", col)
+            dato = int(input())
+            lista.append(dato)
+        # hasta aqui se crea un renglon
+        matriz.append(lista)
+    return matriz
+
+
+def main():
+    mat = pide_datos_matriz()
+    valores_validos = obtener_valores_validos(mat)
+    print(valores_validos)
+
+
+main()
