@@ -1,0 +1,26 @@
+def suma_columnas_matriz():
+    renglones = int(input("Número de renglones: "))
+    columnas = int(input("Número de columnas: "))
+
+    if renglones < 1 or columnas < 1:
+        print("Error")
+        
+    else:
+        matriz = []
+        print("Ingresa los elementos de la matriz fila por fila:")
+        for i in range(renglones):
+            fila = []
+            for j in range(columnas):
+                num = int(input(f"Elemento en posición [{i+1}, {j+1}]: "))
+                fila.append(num)
+            matriz.append(fila)
+
+        suma_columnas = [0] * columnas
+
+        for j in range(columnas):
+            for i in range(renglones):
+                suma_columnas[j] += matriz[i][j]
+
+        print("La suma de cada columna es:", suma_columnas)
+
+suma_columnas_matriz()
