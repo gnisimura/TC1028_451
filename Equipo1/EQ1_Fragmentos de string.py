@@ -1,0 +1,5 @@
+txt = input("Ingresa una palabra: ")
+print("La longitud de tu palabra es", len(txt))
+print("El primer caractér de tu palabra es", txt[0])
+print("El último caractér de tu palabra es", txt[-1])
+print("Los caractéres con índice impar son", txt[1:-1:2])
