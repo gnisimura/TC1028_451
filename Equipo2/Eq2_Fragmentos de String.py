@@ -11,5 +11,5 @@ print(texto[-1])
 
 #caracteres con indice impar
 for x in range(0, len(texto)):
-    if x % 2 == 0:
+    if x % 2 != 0:
         print(texto[x], end="")
