@@ -1,0 +1,7 @@
+texto = str(input("Ingresa el texto: "))
+check1 = texto.lower()
+check2 = check1.replace(" ", "")
+if check2 == check2[::-1]:
+    print("Es un palindromo")
+else:
+    print("No es un palindromo")
