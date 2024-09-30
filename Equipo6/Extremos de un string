@@ -1,0 +1,7 @@
+String = input("Escriba una palabra: ")
+primeros = String[:2]  
+ultimos = String[-2:] 
+if len(String) < 2:
+    print("Su palabra debe tener más de 2 caracteres")
+else:
+    print(primeros+ultimos)
