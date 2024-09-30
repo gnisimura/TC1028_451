@@ -1,0 +1,11 @@
+p1 = input("Ingresa la primera palabra: ")
+p2 = input("Ingresa la segunda palabra: ")
+
+mitad1 = int(len(p1)+1)//2
+mitad2 = int(len(p2)+1)//2
+
+pnueva1 = p1[0:mitad1] + p2[mitad2:len(p2)]
+pnueva2 = p1[mitad1:len(p1)] + p2[0:mitad2] 
+
+print(pnueva1)
+print(pnueva2)
