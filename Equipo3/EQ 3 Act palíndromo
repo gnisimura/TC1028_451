@@ -1,0 +1,8 @@
+def es_palindromo(palabra):
+    palabra_limpia = palabra.lower().replace(" ", "")
+    if palabra_limpia == palabra_limpia[::-1]:
+        return "Es un palindromo"
+    else:
+        return "NO es un palindromo"
+palabra = input("Ingresa una palabra o frase: ")
+print(es_palindromo(palabra))
