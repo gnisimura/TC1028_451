@@ -1,0 +1,18 @@
+x = input("Escriba su palindromo")
+x = x.lower()
+x = x.split()
+y = ""
+z = ""
+a = 0
+
+for i in x:
+    y += i
+
+for i in y:
+    a -= 1
+    z += y[a]
+
+if y == z:
+    print("Es un palindromo")
+else:
+    print("NO es un palindromo")
