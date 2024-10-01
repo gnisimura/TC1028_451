@@ -1,0 +1,5 @@
+palabra = input("Pon una palabra: ")
+x = palabra[0:2]
+y = palabra[-2:]
+z = x + y
+print(str(z))
