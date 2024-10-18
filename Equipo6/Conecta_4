@@ -1,0 +1,160 @@
+import random
+print("¡Bienvenido a conecta 4!")
+print("Como jugar: \n"
+      "- Sé el primero en conectar 4 fichas en línea (horizontal, vertical o diagonal).\n"
+      "- Introduce la letra de la columna (A-G) y el numero de fila (0-5) para colocar tu ficha. Ejemplo: A5")
+modo_de_juego = int(input("Ingresa 0 para jugar contra la computadora o 1 para jugar con otro jugador: "))
+print("-------------------------------------------")
+
+letras = ("A", "B", "C", "D", "E", "F", "G")  # Coordenadas en y
+gameBoard = [["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""],
+             ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""], ["", "", "", "", "", "", ""]]  # Tablero 6x7
+
+rows = 6
+cols = 7
+
+
+def printGameBoard():
+    print("\n     A    B    C    D    E    F    G  ", end="")
+    for x in range(rows):  # Imprime las filas y numeros del 0 al 5 en el lado izquierdo del tablero
+        print("\n   +----+----+----+----+----+----+----+")  # Techo del tablero
+        print(x, " |", end="")  # Divisor de las columnas
+        for y in range(cols):  # Por cada iteracion de la columna (de izquierda a derecha)
+            if gameBoard[x][y] == "🟡":  # Si hay una ficha amarilla...
+                print("", gameBoard[x][y], end=" |")  # Se imprime la ficha y una linea para espaciar correctamente
+            elif gameBoard[x][y] == "🔴":  # Lo mismo pero para una ficha roja
+                print("", gameBoard[x][y], end=" |")
+            else:  # Si no hay ficha...
+                print(" ", gameBoard[x][y], end="  |")  # Se imprimen espacios vacios donde irian las fichas
+    print("\n   +----+----+----+----+----+----+----+")  # Suelo del tablero
+
+def modifyArray(spacePicked, turn):
+    gameBoard[spacePicked[0]][spacePicked[1]] = turn  # Toma las coordenadas de spacePicked y coloca el símbolo del jugador en el tablero (gameBoard).
+
+def checkForWinner(chip):
+    for y in range(cols):  # Verificar espacios horizontales
+        for x in range(rows - 3):
+            if (gameBoard[x][y] == chip and gameBoard[x + 1][y] == chip and gameBoard[x + 2][y] == chip and
+                    gameBoard[x + 3][y] == chip):
+                print("\n Fin de la partida.", "Ganador: ", chip)
+                return True
+
+    for x in range(rows):  # Cambiado a range(rows) para revisar todas las filas
+        for y in range(cols - 3):  # Asegurarse de que no se desborde la última columna
+            if (gameBoard[x][y] == chip and gameBoard[x][y + 1] == chip and
+                    gameBoard[x][y + 2] == chip and gameBoard[x][y + 3] == chip):
+                print("\n Fin de la partida.", "Ganador: ", chip)
+                return True
+
+    for y in range(3, cols):  # Verificar diagonales (Esquina superior derecha a esquina inferior izequierda)
+        for x in range(rows - 3):
+            if y - 3 >= 0:  # Asegurarte de que no accedes a un índice fuera de rango
+                if (gameBoard[x][y] == chip and gameBoard[x + 1][y - 1] == chip and gameBoard[x + 2][y - 2] == chip and
+                        gameBoard[x + 3][y - 3] == chip):
+                    print("\n Fin de la partida.", "Ganador: ", chip)
+                    return True
+
+    for x in range(rows - 3):  # Verificar diagonales (Esquina superior izquierda a esquina inferior derecha)
+        for y in range(cols - 3):
+            if (gameBoard[x][y] == chip and gameBoard[x + 1][y + 1] == chip and gameBoard[x + 2][y + 2] == chip and
+                    gameBoard[x + 3][y + 3] == chip):
+                print("\n Fin de la partida.", "Ganador: ", chip)
+                return True
+
+    return False
+
+def coordinateParser(inputString):  # Asigna una coordenada a las columnas
+    coordinate = [None] * 2
+    if inputString[0] == "A":
+        coordinate[1] = 0
+    elif inputString[0] == "B":
+        coordinate[1] = 1
+    elif inputString[0] == "C":
+        coordinate[1] = 2
+    elif inputString[0] == "D":
+        coordinate[1] = 3
+    elif inputString[0] == "E":
+        coordinate[1] = 4
+    elif inputString[0] == "F":
+        coordinate[1] = 5
+    elif inputString[0] == "G":
+        coordinate[1] = 6
+    else:
+        print("Error: Coordenada invalida")
+    coordinate[0] = int(inputString[1])
+    return coordinate
+
+def isSpaceAvailable(intendedCoordinate): # Verificar si un espacio esta vacio
+    if (gameBoard[intendedCoordinate[0]][intendedCoordinate[1]]) == "🟡":
+        return False
+    elif (gameBoard[intendedCoordinate[0]][intendedCoordinate[1]]) == "🔴":
+        return False
+    else:
+        return True
+
+# Simular la gravedad forzando al jugador a colocar en la fila mas baja disponible
+def gravityChecker(intendedCoordinate):
+    # Calcular el espacio debajo de la posicion deseada
+    spaceBelow = [None] * 2
+    spaceBelow[0] = intendedCoordinate[0] + 1
+    spaceBelow[1] = intendedCoordinate[1]
+    # Checar si la coordenada esta a nivel del suelo
+    if spaceBelow[0] == 6:
+        return True
+    # Checar si hay una ficha debajo de la posicion deseada
+    if isSpaceAvailable(spaceBelow) == False:  # Esta funcion devuelve falso si hay una ficha en el lugar deseado
+        return True  # Basicamente, si hay una ficha debajo, se imita la gravedad dejandote poner una arriba
+    return False
+
+
+def cpuTurn():
+    while True:
+        col = random.randint(0, 6)  # La computadora elige una columna al azar
+        for row in reversed(range(rows)):  # Busca la fila más baja disponible en esa columna
+            if isSpaceAvailable([row, col]):
+                modifyArray([row, col], "🔴")
+                print(f"\nComputadora (🔴) jugó en: {letras[col]}{row}")
+                return
+
+turnCounter = 0
+while True:
+    if turnCounter % 2 == 0:  # Turno del primer jugador
+        printGameBoard()
+        while True:
+            spacePicked = input("\nJugador 1 (🟡), elige un espacio: ")
+            coordinate = coordinateParser(spacePicked)
+            try:
+                # Verificar si el espacio está disponible
+                if isSpaceAvailable(coordinate) and gravityChecker(coordinate) == True:
+                    modifyArray(coordinate, "🟡")
+                    break
+                else:
+                    print("Error: Coordenada invalida.")
+            except:
+                print("Ocurrio un error. Intentalo de nuevo.")
+        winner = checkForWinner("🟡")
+        turnCounter += 1
+
+    else:  # Turno del segundo jugador o de la computadora
+        if modo_de_juego == 0:  # Juego contra la computadora
+            cpuTurn()
+            winner = checkForWinner("🔴")
+        else:  # Juego contra otro jugador
+            printGameBoard()
+            while True:
+                spacePicked = input("\nJugador 2 (🔴), elige un espacio: ")
+                coordinate = coordinateParser(spacePicked)
+                try:
+                    if isSpaceAvailable(coordinate) and gravityChecker(coordinate) == True:
+                        modifyArray(coordinate, "🔴")
+                        break
+                    else:
+                        print("Error: Coordenada invalida.")
+                except:
+                    print("Ocurrio un error. Intentalo de nuevo.")
+            winner = checkForWinner("🔴")
+        turnCounter += 1  # Moved this line outside the 'else' block
+
+    if winner == True:
+        printGameBoard()
+        break  # Salimos del loop si alguien ganó
